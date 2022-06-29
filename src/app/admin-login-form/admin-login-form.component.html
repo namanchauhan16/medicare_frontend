@@ -1,0 +1,29 @@
+<div id="main" style="display: flex;">
+  <div id="leftDiv">
+    <div id="formDiv">
+      <form class="form">
+        <div class="container">
+          <span style="font-size: 30px;">Admin sign in form</span>
+        </div>
+        <div class="container" style="margin-top: 40px;">
+          <h3>Please fill your credentials to sign in.</h3>
+          <hr>
+
+          <input #username type="text" placeholder="Enter username" name="username" id="username" required>
+
+          <input #password type="password" placeholder="Enter Password" name="psw" id="psw" required>
+
+          <div class="checkbox" style="margin-top: 10px;">
+            <label><input type="checkbox"> Remember me</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="margin-top: 20px;" (click)="doLogin(username.value,password.value)">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="rightDiv">
+    <img style="margin-top: 20vh;" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/MEDICARE_COMPANY_LOGO.png"
+      alt="Medicare">
+  </div>
+</div>

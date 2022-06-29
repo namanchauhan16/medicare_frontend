@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+<div id="mainDiv">
+    <p style="font-size: 40px;">Products present in your cart: -</p>
+    <span style="width: 4%;height: 4px;background-color: #3f51b5;display: inline-block;border-radius: 2px; margin-top: 40px;"></span>
+    <div id="cartTable">
+    <h1 *ngIf="cartDetails.length == '0'" style="margin-bottom: 28px;">{{message1}}</h1>
+        <table *ngIf="cartDetails.length != '0'">
+            <thead>
+                <tr>
+                    <td><b>S.no</b></td>
+                    <td><b>Product Tmage</b></td>
+                    <td><b>Product Name</b></td>
+                    <td><b>Quantity</b></td>
+                    <td><b>Total price</b></td>
+                </tr>
+            </thead>
+            <tbody *ngFor="let cart of cartDetails; let i = index">
+                <td>{{i+1}}</td>
+                <td><img src="{{cart.imageUrl}}" style="width: 100px; height: 100px;" alt="product"></td>
+                <td>{{cart.productName}}</td>
+                <td>{{cart.quantity}}</td>
+                <td>{{cart.totalPrice}}</td>
+                <td><button type="button" class="btn btn-primary" (click)="placeOrder(cart.productId,cart.productQuantity,cart,cart.totalPrice)">Confirm order</button>
+                <td><button type="button" class="btn btn-danger" (click)="removeProduct(cart.id)">Remove product</button>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="modal" tabindex="-1" role="dialog" [ngClass]="{'show':showModel}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h1>Order successfully placed</h1>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="showModel = false" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<app-about></app-about>

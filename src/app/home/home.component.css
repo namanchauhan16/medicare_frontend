@@ -1,0 +1,25 @@
+#mainDiv {
+    width: 90%;
+    margin: 0px auto;
+    padding-top: 100px;
+}
+
+#contentDiv {
+    margin-left: 20px;
+}
+
+#productSelection {
+    margin-left: 20px;
+    margin-top: 60px;
+}
+
+.card{
+    padding: 20px;
+    margin: 50px;
+}
+
+.card img{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+}

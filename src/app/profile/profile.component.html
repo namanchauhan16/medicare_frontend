@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+<diV id="mainDiv">
+    <p style="font-size: 40px;">Welcome {{username}}</p>
+    <span
+        style="width: 4%;height: 4px;background-color: #3f51b5;display: inline-block;border-radius: 2px; margin-top: 40px;"></span>
+    <ng-container *ngFor="let user of userDetails">
+        <div style="margin-top: 20px;">
+            <h3>User details: -</h3>
+            <h4>Full Name: - {{user.fullname}}</h4>
+            <h4>Email-ID: - {{user.emailId}}</h4>
+            <h4>Phone No.: - {{user.emailId}}</h4>
+            <h4>Address: - {{user.address}}</h4>
+        </div>
+    </ng-container><br>
+    <hr>
+    <h1 *ngIf="orderDetails.length == '0'" style="margin-top: 30px;">{{message}}</h1>
+    <table *ngIf="orderDetails.length != '0'">
+        <thead>
+            <tr>
+                <td><b>S.no</b></td>
+                <td><b>Product Tmage</b></td>
+                <td><b>Product Name</b></td>
+                <td><b>Quantity</b></td>
+                <td><b>Total price</b></td>
+            </tr>
+        </thead>
+        <tbody *ngFor="let order of orderDetails; let i = index">
+            <td>{{i+1}}</td>
+            <img src="{{order.imageUrl}}" style="width: 100px; height: 100px;" alt="product">
+            <td>{{order.productName}}</td>
+            <td>{{order.quantity}}</td>
+            <td>{{order.totalPrice}}</td>
+            <td><button type="button" class="btn btn-danger" (click)="cancleOrder(order.orderId,order.productId,order.productQuantity,order.quantity)">cancle order</button>
+        </tbody>
+    </table>
+</diV>
+<app-about></app-about>

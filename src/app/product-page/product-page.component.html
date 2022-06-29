@@ -1,0 +1,19 @@
+<div id="mainDiv" class="container">
+    <div id="innerDiv" class="container" *ngFor="let product of productDetails">
+        <img id="productImg" src="{{product.imageUrl}}" alt="image">
+        <div class="content">
+            <h2>{{product.productName}}</h2>
+            <h3>Qty.Avail: - {{product.avaliableQuantity}}</h3>
+            <h3>Unit price: - {{product.price}}</h3>
+            <h3>Product type: - {{product.type}}</h3>
+            <h3>Mention the quantity: - <input type="number" placeholder="< {{product.avaliableQuantity}}"
+            [(ngModel)]="cartData.quantity" name="quantity" style="width: 20%;
+            margin-left: 10px; align-content: center;text-align: center; border: 1px solid gray;"></h3>
+            <button class="btn btn-danger" style="font-size: 20px; margin-right: 10px;padding: 10px 15px 10px 15px;"
+                (click)="closeDialog()">Cancle</button>
+            <button type="submit" class="btn btn-primary md-3" style="border-radius: 5px;background-color: #3f51b5;
+            width: auto; font-size: 18px;" (click)="addToCart(product.avaliableQuantity)">
+                Add to <i class="fa fa-cart-arrow-down fa-2x" aria-hidden="true"></i></button>
+        </div>
+    </div>
+</div>

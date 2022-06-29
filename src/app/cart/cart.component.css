@@ -1,0 +1,29 @@
+#mainDiv{
+    width: 90%;
+    margin: 0px auto;
+    padding-top: 102px;
+}
+
+#cartTable{
+    margin-top: 42px;
+    padding: 20px;
+    width: auto;
+}
+
+table thead{
+    border-bottom: 2px solid grey;
+}
+
+table tbody{
+    border: 1px solid lightgrey;
+    border-left: none;
+    border-right: none;
+}
+
+table td{
+    padding: 20px;
+}
+
+.modal.show{
+    display: block;
+}

@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+<div id="mainDiv">
+    <div id="contentDiv">
+        <p style="font-size: 24px;">Welcome to your own pharmacy store - Medicare</p>
+        <span
+            style="width: 4%;height: 4px;background-color: #3f51b5;display: inline-block;border-radius: 2px; margin-top: 20px;"></span>
+        <p style="font-size: 18px; margin-top: 20px;">where you will get al the products <br> related to your problems
+        </p>
+    </div>
+    <div id="productSelection">
+        <p style="font-size: 24px; display: inline;">Avaliable products</p>
+        <p style="display: inline;margin-left: 80px;margin-right: 10px; font-size: 20px;">Category</p>
+        <mat-form-field appearance="fill">
+            <mat-label>Select a category</mat-label>
+            <mat-select value="all_products">
+                <mat-option value="all_products" (click)="getProducts('all_products')">All products</mat-option>
+                <mat-option value="personal_care" (click)="getProducts('personal_care')">Personal care products
+                </mat-option>
+                <mat-option value="pain_relief" (click)="getProducts('pain_relief')">Pain relief products</mat-option>
+                <mat-option value="baby_care" (click)="getProducts('baby_care')">Baby care products</mat-option>
+                <mat-option value="medical_supplies" (click)="getProducts('medical_supplies')">Medical supplies
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</div>
+<hr>
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let product of products">
+            <div class="card col-md-3">
+                <img src="{{product.imageUrl}}" alt="" style="margin-right: 40px; float: left;
+                box-shadow: 1px 2px 7px 0px lightgrey;">
+                <h4 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis; max-width: 100cm;">
+                    {{product.productName}}</h4>
+                <p>Qty.Avail: - {{product.avaliableQuantity}}</p>
+                <p>Unit price: - {{product.price}}</p>
+                <button type="submit" class="btn btn-primary" style="background-color: #3f51b5;"
+                    (click)="seeProduct(product.id,product.productName,product.imageUrl,product.price)"
+                    [disabled]="product.status == '0'">View product</button>
+                    <p *ngIf="product.status == '0'" style="margin-top: 20px; color: red;">*{{message}}</p>
+            </div>
+        </ng-container>
+    </div>
+</div>
+<app-about></app-about>

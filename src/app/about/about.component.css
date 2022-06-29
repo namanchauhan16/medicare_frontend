@@ -1,0 +1,24 @@
+#about{
+    background-color: #3f51b5;
+    font-family: "Gotham Rounded SSm A","Gotham Rounded SSm B",Helvetica,Arial,sans-serif;
+    color: white;
+    width: 100%;
+    padding-top: 40px;
+}
+
+#innerDiv{
+    width: 85%;
+    margin: 0 auto;
+    height: 300px;
+    display: flex;
+}
+
+.subDiv{
+    width: 25%;
+    height: auto;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
